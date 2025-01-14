@@ -1,5 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:stroll_dev_test/common/utils/widget_functions.dart';
 
 import '../../../../common/styles/text_styles.dart';
 import '../../../../constants/colors.dart';
@@ -31,7 +32,7 @@ class BonfireBody extends StatelessWidget {
           children: [
             SizedBox(
               width: double.infinity,
-              height: 110.0,
+              height: 85.0,
               child: Stack(
                 clipBehavior: Clip.none,
                 fit: StackFit.expand,
@@ -39,7 +40,7 @@ class BonfireBody extends StatelessWidget {
                   const ProfileAvatar(),
                   Positioned(
                     top: 40.0,
-                    left: 75.0,
+                    left: 84.0,
                     child: SizedBox(
                       width: MediaQuery.sizeOf(context).width - 80 - 38,
                       child: Text(
@@ -56,6 +57,7 @@ class BonfireBody extends StatelessWidget {
               '"Mine is definitely the peace in the morning."',
               style: TextStyles.response,
             ),
+            addHeight(4),
             const OptionsWidget(
               options: [
                 "The peace in the early mornings",
@@ -64,7 +66,6 @@ class BonfireBody extends StatelessWidget {
                 "The serenity past midnight",
               ],
               paddingVertical: 12.0,
-              optionColor: AppColors.cardColor,
               showBorders: false,
               numbering: ["A", "B", "C", "D"],
             ),
@@ -79,24 +80,28 @@ class BonfireBody extends StatelessWidget {
                 const Spacer(),
                 IconButton.outlined(
                   onPressed: () => {},
-                  icon: const Icon(
-                    CupertinoIcons.mic_fill,
-                    size: 35.0,
-                    color: AppColors.primaryColor,
+                  icon: const Padding(
+                    padding: EdgeInsets.all(2),
+                    child: Icon(
+                      CupertinoIcons.mic_fill,
+                      size: 28,
+                      color: AppColors.primaryColor,
+                    ),
                   ),
                   style: IconButton.styleFrom(
                       side: const BorderSide(
                           width: 2, color: AppColors.primaryColor)),
                 ),
-                const SizedBox(
-                  width: 12.0,
-                ),
+                addWidth(12),
                 IconButton.outlined(
                   onPressed: () {},
-                  icon: const Icon(
-                    Icons.arrow_forward,
-                    size: 35.0,
-                    color: AppColors.backgroundColor,
+                  icon: const Padding(
+                    padding: EdgeInsets.all(2),
+                    child: Icon(
+                      Icons.arrow_forward,
+                      size: 28,
+                      color: AppColors.backgroundColor,
+                    ),
                   ),
                   style: IconButton.styleFrom(
                     side: const BorderSide(

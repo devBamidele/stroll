@@ -6,8 +6,6 @@ import '../../../../constants/colors.dart';
 
 class ProfileAvatar extends StatelessWidget {
   final String? image;
-  final Object tag;
-  final String? text;
   final double? fontSize;
   final Color backGroundColor;
   final double radius;
@@ -18,8 +16,6 @@ class ProfileAvatar extends StatelessWidget {
     this.backGroundColor = AppColors.secondaryCardColor,
     this.radius = 30.0,
     this.fontSize,
-    this.text,
-    this.tag = "null",
   });
 
   @override
@@ -36,27 +32,24 @@ class ProfileAvatar extends StatelessWidget {
               ),
               // width: 300,
               padding: EdgeInsets.only(
-                  left: radius * 30 / 29, right: 8.0, top: 2, bottom: 2),
+                  left: radius * 30 / 26, right: 10, top: 4, bottom: 4),
               child: Text(
-                text ?? "Angelina, 28",
+                "Angelina, 28",
                 style: TextStyles.nameTag.copyWith(fontSize: fontSize),
               )),
         ),
-        Hero(
-          tag: tag,
-          child: Container(
-            decoration: BoxDecoration(
-              border: Border.all(color: backGroundColor, width: 4.0),
-              shape: BoxShape.circle,
-            ),
-            child: ClipRRect(
-              borderRadius: BorderRadius.circular(360),
-              child: CircleAvatar(
-                backgroundImage: Image.asset(
-                  image ?? AppAssets.lady1,
-                ).image,
-                radius: radius,
-              ),
+        Container(
+          decoration: BoxDecoration(
+            border: Border.all(color: backGroundColor, width: 6),
+            shape: BoxShape.circle,
+          ),
+          child: ClipRRect(
+            borderRadius: BorderRadius.circular(360),
+            child: CircleAvatar(
+              backgroundImage: Image.asset(
+                image ?? AppAssets.lady1,
+              ).image,
+              radius: radius,
             ),
           ),
         ),

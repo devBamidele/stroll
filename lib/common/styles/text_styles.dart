@@ -46,7 +46,8 @@ class TextStyles {
   );
 
   static TextStyle response = const TextStyle(
-    fontSize: 12,
+    fontWeight: FontWeight.w400,
+    fontSize: 13,
     fontStyle: FontStyle.italic,
     color: AppColors.purpleTextColor,
     shadows: [

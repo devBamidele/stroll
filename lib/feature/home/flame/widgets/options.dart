@@ -8,7 +8,7 @@ class OptionsWidget extends StatefulWidget {
   final List<String>? numbering;
   final bool showBorders;
   final int childAspectRatio;
-  final Color? optionColor;
+
   final double paddingVertical;
 
   const OptionsWidget({
@@ -16,7 +16,6 @@ class OptionsWidget extends StatefulWidget {
     required this.options,
     this.numbering,
     this.showBorders = true,
-    this.optionColor,
     this.childAspectRatio = 6,
     this.paddingVertical = 24.0,
   });
@@ -41,17 +40,17 @@ class _OptionsWidgetState extends State<OptionsWidget> {
         crossAxisCount: 2,
         childAspectRatio: MediaQuery.of(context).size.width /
             (MediaQuery.of(context).size.height / widget.childAspectRatio),
-        mainAxisSpacing: 16.0,
+        mainAxisSpacing: 18.0,
         crossAxisSpacing: 16.0,
       ),
       padding: EdgeInsets.symmetric(vertical: widget.paddingVertical),
       shrinkWrap: true,
-      itemBuilder: (BuildContext context, int index) {
+      itemBuilder: (context, index) {
         return Options(
           text: widget.options[index],
           showBorders: widget.showBorders,
           numbering: widget.numbering?[index],
-          optionColor: widget.optionColor,
+          optionColor: AppColors.cardColor,
           onTap: () {
             setState(() {
               selectedIndex = index;
@@ -70,7 +69,7 @@ class Options extends StatelessWidget {
   final Function() onTap;
   final String? numbering;
   final bool showBorders;
-  final Color? optionColor;
+  final Color optionColor;
 
   final bool selected;
 
@@ -80,7 +79,7 @@ class Options extends StatelessWidget {
     required this.onTap,
     required this.selected,
     this.showBorders = true,
-    this.optionColor = AppColors.secondaryCardColor,
+    required this.optionColor,
     this.numbering,
   });
 
@@ -97,7 +96,7 @@ class Options extends StatelessWidget {
                     : showBorders
                         ? AppColors.greyColor.withOpacity(.3)
                         : Colors.transparent,
-                width: 2.0),
+                width: 2.5),
             color: optionColor,
             borderRadius: BorderRadius.circular(12.0)),
         child: Row(
@@ -105,23 +104,22 @@ class Options extends StatelessWidget {
             if (numbering != null)
               Container(
                 alignment: Alignment.center,
-                padding: const EdgeInsets.all(6.0),
-                margin: const EdgeInsets.all(8.0),
+                padding: const EdgeInsets.all(6),
+                margin: const EdgeInsets.all(10),
                 decoration: BoxDecoration(
                   border: Border.all(
                       color: selected
                           ? AppColors.primaryColor
-                          : AppColors.greyColor,
-                      width: 2.0),
+                          : AppColors.greyTextColor,
+                      width: 1.5),
                   color: selected ? AppColors.primaryColor : null,
                   shape: BoxShape.circle,
                 ),
                 child: Text(
                   numbering!.toUpperCase(),
                   style: TextStyles.options.copyWith(
-                      color: selected
-                          ? AppColors.whiteTextColor
-                          : AppColors.greyTextColor),
+                      fontSize: selected ? 13 : 12,
+                      color: AppColors.whiteTextColor),
                 ),
               ),
             Expanded(

@@ -20,3 +20,18 @@ dev_dependencies:
 
 flutter:
   uses-material-design: true
+
+  assets:
+    - assets/images/
+    - assets/icons/
+
+  fonts:
+    - family: ProximaNova
+      fonts:
+        - asset: assets/fonts/italic.otf
+          style: italic
+        - asset: assets/fonts/bold.otf
+          weight: 700
+        - asset: assets/fonts/semibold.otf
+          weight: 600
+        - asset: assets/fonts/regular.otf
