@@ -10,26 +10,30 @@ class FlameScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final size = MediaQuery.of(context).size;
     return Scaffold(
       body: Stack(
         children: [
-          FractionallySizedBox(
-            widthFactor: 1,
-            heightFactor: 0.67,
-            child: Image.asset(
-              AppAssets.background,
-              fit: BoxFit.cover,
+          Positioned(
+            top: 0.0,
+            left: 0.0,
+            child: SizedBox(
+              width: size.width,
+              height: size.height * 0.67,
+              child: Image.asset(
+                AppAssets.background,
+                fit: BoxFit.cover,
+              ),
             ),
           ),
-          FractionallySizedBox(
-            widthFactor: 1,
-            heightFactor: 0.5,
-            child: Positioned(
-              top: 0.0,
-              child: Container(
-                decoration: BoxDecoration(
-                  gradient: AppColors.flameBgGradient,
-                ),
+          Positioned(
+            top: 0.0,
+            left: 0.0,
+            child: Container(
+              width: size.width,
+              height: size.height * 0.5,
+              decoration: BoxDecoration(
+                gradient: AppColors.flameBgGradient,
               ),
             ),
           ),
@@ -42,7 +46,7 @@ class FlameScreen extends StatelessWidget {
                 BonfireBody(),
               ],
             ),
-          )
+          ),
         ],
       ),
     );

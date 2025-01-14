@@ -11,7 +11,6 @@ class AppTheme {
         primaryColor: AppColors.primaryColor,
         scaffoldBackgroundColor: Colors.black,
         useMaterial3: true,
-        cardColor: AppColors.cardColor,
         fontFamily: "ProximaNova",
         bottomNavigationBarTheme: const BottomNavigationBarThemeData(
           backgroundColor: AppColors.bottomSheetColor,
