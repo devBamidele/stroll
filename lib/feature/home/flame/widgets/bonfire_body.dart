@@ -32,7 +32,7 @@ class BonfireBody extends StatelessWidget {
           children: [
             SizedBox(
               width: double.infinity,
-              height: 85.0,
+              height: 105.0,
               child: Stack(
                 clipBehavior: Clip.none,
                 fit: StackFit.expand,

@@ -40,8 +40,8 @@ class _OptionsWidgetState extends State<OptionsWidget> {
         crossAxisCount: 2,
         childAspectRatio: MediaQuery.of(context).size.width /
             (MediaQuery.of(context).size.height / widget.childAspectRatio),
-        mainAxisSpacing: 18.0,
-        crossAxisSpacing: 16.0,
+        mainAxisSpacing: 16.0,
+        crossAxisSpacing: 6.0,
       ),
       padding: EdgeInsets.symmetric(vertical: widget.paddingVertical),
       shrinkWrap: true,
@@ -88,6 +88,7 @@ class Options extends StatelessWidget {
     return InkWell(
       onTap: onTap,
       child: Container(
+        margin: const EdgeInsets.only(right: 10),
         alignment: Alignment.center,
         decoration: BoxDecoration(
             border: Border.all(
