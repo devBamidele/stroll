@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 
+import 'constants/theme.dart';
 import 'feature/home/home.dart';
 
 void main() {
@@ -18,10 +19,11 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const MaterialApp(
+    return MaterialApp(
       title: 'Stroll Developer Test',
       debugShowCheckedModeBanner: false,
-      home: Home(),
+      theme: AppTheme.theme(),
+      home: const Home(),
     );
   }
 }
